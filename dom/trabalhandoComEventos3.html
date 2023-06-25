@@ -1,0 +1,72 @@
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #03</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+        }
+        
+        .esquerda {
+            height: 100vh;
+            width: 50%;
+            background-color: coral;
+        }
+        
+        .direita {
+            height: 100vh;
+            width: 50%;
+            background-color: cornflowerblue;
+        }
+        
+        .item {
+            border: solid 5px black;
+            background-color: darkgrey;
+            color: white;
+            height: 100px;
+            font-size: 40px;
+            margin: 10px;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="esquerda" wm-dropzone>
+        <div class="item">1</div>
+        <div class="item">2</div>   
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    <div class="direita" wm-dropzone></div>
+    <script>
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        items.forEach((item, index) => { // Para cada item da lista items, vai pegar o próprio item e o index desse item
+            item.draggable = true // Transforma o elemento em um elemento arrastável
+            item.id = item.id || `draggable-item-${index}`
+            item.ondragstart = e =>
+                e.dataTransfer.setData('item-id', e.target.id) // Define o id do item que está sendo arrastado
+        }) 
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        dropzones.forEach(dropzone => {
+            dropzone.ondragover = e => e.preventDefault()
+            dropzone.ondrop = function(e) {
+                const id = e.dataTransfer.getData('item-id')     // Pega o id do elemento solto (Setado anteriormente)
+                const item = document.getElementById(id) // Entende qual elemento está sendo movido
+              //  e.target.appendChild(item) // Neste caso é possível "stackar" os elementos um dentro do outro
+                // Em outras palavras, o elemento "item" é adicionado como filho dentro do elemento onde se solta ele
+                dropzone.appendChild(item) // Aqui os elementos não ficam "stackados"
+                // Em outras palavras, o elemento "item" é adicionado como filho dentro de "dropzone", ou seja, na div
+            }
+        })
+
+    
+    </script>
+</body>
+
+</html>

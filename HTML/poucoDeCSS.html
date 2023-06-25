@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Um Pouco de CSS</title>
+        <!--Dentro de style está código CSS--> 
+        <style> 
+            h1{ /*Tudo isso vai ser aplicado a todos elementos h1*/
+                /*display: none;*/ 
+                /*background-color: red;*/
+                /*position: absolute;*/
+                /*top: 400px;*/
+                /*left: 400px;*/
+                font-size: 100px;
+            }
+            /*para aplicar estilo a classe é utilizado "."*/
+            .fundoVermelho{
+                background-color: red;
+            }
+            .negrito{
+                font-weight: bold;
+            }
+            /*para aplicar estilo a id é utilizado "#"*/
+            #textoPrincipal{
+                font-size: 40px;
+                font-weight: bold;
+                background-color: #444;
+                color: #fff;
+                padding: 10px;
+                margin-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <span id="textoPrincipal">Texto 1</span><br><br><br> <!--A tag br quebra linha-->
+        <span class="fundoVermelho negrito">Texto 2</span><br><br>
+        <span class="fundoVermelho">Texto 3</span>
+    </body>
+</html>

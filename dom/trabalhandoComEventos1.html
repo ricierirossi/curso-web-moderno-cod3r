@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <!-- Pode-se usar o chamado da função direto na tag, mas não é muito prático para muitas funções e tags
+    <div>
+        <a href="https://google.com.br"
+            onclick = "navegarEm5s(event)">Google</a>
+    </div>
+    -->
+
+    <!-- Utilizando a tag diretamente na chamada de função
+        <div>
+        <a href="https://google.com.br"
+            onclick = "navegarEm5s(event)">Google</a>
+    </div> 
+    -->
+
+    <!-- Utilizando um atributo personalizado para chamar a função -->
+    <div>
+        <a espera-um-pouco href="https://google.com.br">Google</a>
+    </div>
+
+    <script>
+        function navegarEm5s(e) {
+            e.preventDefault() // Evita que o link seja acessado no momento do click
+            // console.log(e)
+            console.log('Saindo em 5s...')
+            const a = document.querySelector('[espera-um-pouco]')
+            // console.log(e.value)
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href // Altera o endereço da janela do browser para o definido
+            }, 5000)
+        }
+        // Ou pode-se chamar a função da seguinte forma, porém fica mais difícil de entender o que acontece
+        // const a = document.querySelector('a')
+        // a.onclick = navegarEm5s
+
+        // Para contornar isso, é possível utilizar um atributo personalizado na tag, pois, o browser vai ignorar, então se 
+        // deduz que o atributo está sendo utilizado para chamar uma função
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s // A função é chamada quando ocorre o onClick. o Evento onClick é passado de forma implícita
+        // para a função.
+         
+        // Entendimento: Eventos (e) são ações pré-definidas que ocorrem na página, como por exemplo, clicar em um link e ser
+        // redirecionado.
+
+    </script>
+</body>

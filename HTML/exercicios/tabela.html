@@ -1,0 +1,52 @@
+<table> <!-- usado para criar uma tabela, é interessante usar corretamente as tags pela semântica -->
+    <caption>Produtos</caption><!-- Opcional, funciona como um título da tabela -->
+    <thead><!-- thead indica que é o cabeçalho da tabela -->
+        <tr><!-- tr é a tag para criar linha da tabela -->
+            <th>Produto</th><!-- th é a tag para criar uma coluna dentro do thead   -->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody><!-- tbody é o corpo da tabela que vai ter os dados -->
+        <tr>
+            <td>iPad</td><!-- td é um dado em si, deve ser preenchido na mesma ordem que th -->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>            
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>            
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td> <!-- colspan deixa que o tamanho da coluna seja o valor desejado de colunas
+            também serve para linha se usar rowspan -->
+            <td>37637,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style> /* utilizando o próprio nome das tags para aplicar o estilo */
+    table{
+        border-collapse: collapse;
+    }
+    th, td{ /* vai aplicar os estilo em th e td */
+        padding: 10px;/* causa espaçamento dentro do elemento */
+    }
+    thead tr{ /* vai aplicar os estilos em tr que estão dentro de thead */
+        border-bottom: solid 3px #444;
+    }
+    tbody tr:hover{/* vai aplicar os estilo do tr dentro do tbody quando o mouse passar por cima */
+        background-color: #dedede;
+    }
+    tfoot{
+        background-color: #444;
+        color: #ffff;
+        font-weight: bold;
+    }
+</style>

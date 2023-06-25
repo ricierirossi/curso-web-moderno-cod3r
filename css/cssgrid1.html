@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%; /* define a organização das colunas dentro do CSS Grid, no caso definindo 2 colunas */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /* pega 3 colunas de 8,33% e repete 4 vezes, totalizando 12 colunas de 8,335 */
+            grid-template-columns: repeat(11, 100px) 120px; /* cria 11 colunas de 100px e uma outra de 120px */
+            /*mimax(100px, 300px)*/ /*mantém a coluna entre 100 e 300px de acordo com a navegação */
+            grid-template-columns: 200px 20% 1fr; /* primeira coluna tem 200px, a segunda tem 20% e a terceira pega o resto */
+            grid-template-columns: 3fr 6fr 3fr; /*a grid é quebrada em 12 fragmentos, as colunas 1 e 3 recebem 3 fr, e a 2 recebe 6 fr */
+            
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            grid-template-rows: 100px 1fr; /*como foi definido 3 colunas, aqui as linhas ficarão: 1a com 100px - 2a com 1fr (máx possível) - 3a e 4a com o que sobrar */
+            grid-template-rows: 100px auto; /*primeira linha com 100px e as outras dividas automaticamente */
+            grid-template-rows: 100px auto auto auto; /* para aparecer a numeração correta no Inspecionar */
+        }   
+
+        .d8 {
+            /* As seguintes propriedades definem onde a coluna se inicia e termina 
+            com base na númeração de linha da grid (Inpecionar > Leyout > Grid) */
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-column-end: span 2; /* sai da linha 2 (grid-column-start: 2;) e termina 2 linhas depois*/
+            /* As seguintes propriedades definem onde a linha se inicia e termina 
+            com base na númeração de linha da grid (Inpecionar > Layout > Grid) */
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-row-end: span 2; /* sai da linha 3 (grid-row-start: 3;) e termina 2 linhas depois*/
+        }
+
+        .d10,
+        .d11 {
+            /* podem se sobrepor */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 1;
+        }
+
+        .d10 {
+            z-index: 10; /*define qual elemento fica na frente de qual, quanto maior o valor mais a frent ele fica*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+    <div class="d5">5</div>
+    <div class="d6">6</div>
+    <div class="d7">7</div>
+    <div class="d8">8</div>
+    <div class="d9">9</div>
+    <div class="d10">10</div>
+    <div class="d11">11</div>
+    <div class="d12">12</div>
+</body>
+
+</html>

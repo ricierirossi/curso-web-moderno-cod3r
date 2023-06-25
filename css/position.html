@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+        .static{ /*left e top não fazem diferença pois a position:static (padrão) ignora essas variáveis*/
+            top: 100px;
+            left: 100px;
+            background-color: blueviolet;
+        }
+        .fixed{
+            position: fixed; /*fica fixo na tela, não se move com o scroll, independe da posição de outros elementos*/
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+        }
+        .relative1{
+            position: relative; /*leva em consideração a posição do elemeto anterior (relativo ao elemento anterior*/
+            left: 50px;
+            top: 5px;
+            background-color: greenyellow;
+        }
+        .absolute1{
+            position: absolute; /*se posiciona em relação a pagina toda, ignora outros elementos, mas move com scroll*/
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+        .relative2{
+            position: relative; /**/
+            top: 2000px;
+            left: 250px;
+            background-color: grey;
+            width: 200px;
+            height: 200px;
+        }
+        .absolute2{
+            position: absolute; /**/
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            width: 20px;
+            height: 20px;
+
+            /* Quando um elemento filho com position absolute, está dentro de um elemento pai com position relative, o filho
+            irá se posicionar em relação ao pai; porém, se o pai não está com relative, então o filho absolute se  posicionará
+            em relação a página, como normalmente faria.*/
+        }
+        .sticky{
+            position: -webkit-sticky; /*para navegador Safaria apenas*/
+            position: sticky; /*se move com o scroll até a posição definida, a partir daí fica grudado*/
+            background-color: #777;
+            top: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<h1>Formulário</h1>
+
+<form method="POST""> <!--se trocar o método POST por GET, os parámetros selecionados na página serão exibidos na URL-->
+    <input type="hidden" name="id" value="4"> <!--o input do tipo hidden é usado para carregar um valor que não será
+    exibido para o usuário-->
+    <input type="text" name="nome"> 
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin">Admin <!--é value que será enviado para o backend, não o texto-->
+        <input type="radio" name="tipo" value="regular">Regular
+        <input type="radio" name="tipo" value="professor">Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo">Ativo
+    </div>
+    <select name="estado">
+        <option value="AC">Acre</option>
+        <option value="BH">Bahia</option>
+        <option value="CE">Ceará</option>
+    </select>
+    <select name="interesses" multiple size = 5> <!--multiple size é o número de opções visíveis, clicavel com CTRL-->
+        <option value="js">JS</option>
+        <option value="java">Java</option>
+        <option value="php">PhP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+    </select>
+    <button formaction="http://localhost:3003/usuarios">Incluir</button> <!--o formaction permite levar para links
+    diferentes, um exemplo é o botão Alterar-->
+    <button formaction="http://localhost:3003/usuarios/2">Alterar</button> <!--o 2 é o id que é mostrado no console
+    quando o botão Alterar é clicado-->
+</form>
+
+<style>
+    input, textarea, select{
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type=radio], input[type=checkbox]{
+        display: inline;
+    }
+</style>

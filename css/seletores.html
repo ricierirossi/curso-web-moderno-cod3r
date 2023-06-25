@@ -1,0 +1,71 @@
+<!--
+    Tipos de seletores
+    "*" Universal: todos os elementos da página
+    ".nome" Classe: seleciona classes
+    "+" Adjacente sibling: tag adjacente a outra dentro de uma tag pai
+    "~" General sibling: duas tags não adjacentes dentro de uma tag pai
+    ">" Child: uma tag que está dentro de uma tag pai
+    " " Descendant: uma tag que está dentro uma tag pai detro de outra tag pai
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* * */
+        .tag
+        /* #aprovados */
+        /* #aninhado > div */
+        /* #aninhado section */
+        /* p + ul */
+        /* p ~ ol */
+        /* [feira] */
+        /* [feira=casa] */
+        /* [feira*=sa] aqui vai buscar os atributos feira e selecionar aqueles que contém sa no valor*/
+        /* [feira~=escritorio] aqui vai buscar possíveis elementos que tem o valor semelhante se separados por espaço*/ 
+        /* span:nth-child(1) busca uma tag span que seja filho e esteja na primeira posição */ 
+        /* section > :nth-child(odd) busca os elementos em posição ímpar filhos de section*/
+        /* section > :nth-child(even) busca os elementos em posição par filhos de section*/
+        /* section > span:nth-of-type(2) busca os elementos do tipo span na segunda posição dentro de section */
+        {
+            color: #ff0;
+            background-color: #f77;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag nolabel'> <!--existe um label devido ao tag.js, que ocupa espaço, então tem que tirar para visualizar os seletores-->
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

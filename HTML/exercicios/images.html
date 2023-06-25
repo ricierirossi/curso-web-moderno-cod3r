@@ -1,0 +1,64 @@
+<!--forma absoluta: link direto-->
+<!--forma relativa: ../../../arquivo-->
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+         alt="Muro da Cidade"
+         width="513" height="342"
+         title="Muro da Cidade por Tarso Bessa">
+    <!--src indica o endereço da imagem--> 
+    <!-- alt é usada por leitores e quando imagens não são carregadas, propriedade alternativa -->
+    <!-- title é usado para aparecer um texto ao deixar o cursor em cima da imagem -->
+    <img src="https://media.tenor.com/Pb1TfZhr-OQAAAAM/spy-x-family-anya.gif"
+         alt="Anya" 
+         title="Anya com risada estranha">
+</p>
+
+<p class="imagemcircular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+         alt="Rio de Janeiro"
+         height="342">
+</p>
+
+<p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+         alt ="Avatar"
+         height="50"
+         style="float: left">
+         TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TEXTOTEXTO TEXTO TEXTO TEXTO
+         TEXTO TEXTO TEXTO TEXTOTEXTO TEXTO TEXTO TEXTO
+</p>
+
+<p>
+    <picture> <!--permite colocar várias imagens de fontes diferentes e colar critério para exibir ou não 
+    essas imagens-->
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                media="(min-width: 600px)"> <!--funciona como uma condicional, vai mostrar a imagem se a tela tiver
+                no mínimo largura 600 px, senão, busca a próxima imagem // Pode-se colocar varias source-->
+                <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+
+    </picture>
+</p>
+
+<p class="cidade"></p>
+
+<style>
+    .imagemcircular{  
+        width: 513px;
+        background-color: #444;
+    }
+    .texto{
+        width: 400px;
+    }
+    .texto img{
+        margin: 0px 12px 12px 0px; /* é possível utilizar apenas margin-right: 12px*/
+    }
+    .cidade{ /*assim é possível inserir uma imagem utilizando CSS ao invés de HTML*/
+        width: 513px;
+        height: 342px;
+        background-image: url(http://files.cod3r.com.br/curso-web/imagem4.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+
+    }
+</style>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        body {
+            font-size: 40px;
+            background-color: coral;
+            /* height: 100%; */
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+        
+        span, div{
+            /*o body ele ocupa 100% da horizontal de tela, mas ocupa somente o necessário da altura, então,
+            aplicar uma altura relativa (%) não vai fazer com que a div, dentro do body, tenha sua altura
+            alterada. Mas, utiizando uma alturada absoluta (px) sim, pois, aumenta também o tamanho do body:
+            O span não vai se alterar por se tratar de um elemeto inline.*/
+            width: 50%;
+            height: 100%;
+            height: 250px;
+            /*Se criar um seletor para o html e definir ele com altura de 100%, o body com 100% e a div com x%,
+            neste caso a div vai crescer x% por seus parents já estarem com o tamanho relativo também.*/
+        }
+        /* html{
+            height: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

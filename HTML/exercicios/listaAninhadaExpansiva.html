@@ -1,0 +1,54 @@
+<!--Só vai funcionar se abrir diretamente nessa página, devido a ajax no index-->
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span propriedadePersonalizada>backend</span> <!--O span permite gravar algo com uma propriedade personalizada, por si só o span não é nada-->
+            <ul>
+                <li>
+                    <span propriedadePersonalizada>app</span>
+                        <ul>
+                            <li>produto.js</li>
+                            <li>usuario.js</li>
+                            <li>venda.js</li>
+                        </ul>
+                </li>
+                <li>
+                    <span propriedadePersonalizada>config</span>
+                        <ul>
+                            <li>bancosss.js</li>
+                            <li>rotas.js</li>
+                            <li>servidos.js</li>
+                        </ul>
+                </li>
+            </ul>
+    </li>
+    <li>
+        <span propriedadePersonalizada>frontend</span>
+            <ul>
+                <li>
+                    <span propriedadePersonalizada>public</span>
+                        <ul>
+                            <li>app.css</li>
+                            <li>app.js</li>
+                            <li>index.html</li>
+                        </ul>
+                </li>
+            </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    /*aqui vamos procurar todos os elementos que possuem propriedadePersonalizada e o forEach serve para pegar cada um deles
+    e quando clicados será disparado uma função, a categoria é cada item que deve ser aberto na lista (ex: backend)*/
+    document.querySelectorAll('[propriedadePersonalizada]').forEach(categoria => {
+        categoria.onclick = function(e) {
+        const ul = categoria.nextElementSibling /*aqui é definida uma constante chamada ul para armazenar os elementos seguintes de uma categoria */
+        const visibilidade = ul.style.display /*constante visibilidade armazena o estado da propriedade display atual da ul */
+        ul.style.display = visibilidade === 'none' ? 'block' : 'none' /*se display for none, então recebe visibilidade em bloco, caso contrário
+        ele fica com visibildiade none (não aparece)*/
+    }
+    })
+</script>
+

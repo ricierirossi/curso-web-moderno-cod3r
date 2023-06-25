@@ -1,0 +1,51 @@
+<video id="meuVideo" width="800" height="450" controls controlsList="nodownload"> 
+    <!--é possível ao invés de usar a tag source usar o atributo src na tag video-->
+    <!--controls mostra os controles do vídeo-->
+    <!--controlsList="nodownload" remove o botão de download do vídeo-->
+    <!--autoplay permite dar play no vídeo automaticamente quando se entra na página-->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+</video>    
+
+<div vidProgresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button vidPlay="meuVideo">Play</button>
+    <button vidPause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+    .progresso > div{ /* aplicar em uma div que está dentro de um elemento cuja a classe é progresso*/
+        background-color: red;
+        color: white;
+        height: 100%;
+        text-align: right;
+        width: 0%;
+    }
+</style>
+
+<script>
+    function configVideo(id){
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false //impede que ao clicar com botão direito do mouse abra um menu
+
+        document.querySelector(`[vidPlay=${id}]`).onclick = e => video.play()
+        document.querySelector(`[vidPause=${id}]`).onclick = e => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[vidProgresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        },500)
+
+    }
+    configVideo('meuVideo')
+</script>

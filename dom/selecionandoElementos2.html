@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Nesta aula vimos as funções:
+                                    querySelector      --- retorna apenas o primeiro elemento
+                                    querySelectorAll   --- retorna todos elementos em um Nodelist (pode transformar em array também)
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+        document.querySelector('#primeiro').classList.add('destaque')
+        const selecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+        const deselecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+        selecionar('div')
+        deselecionar('*')
+        selecionar('.terceiro.ultimo') //seleciona elemento com classe terceiro e classe ultimo
+        deselecionar('*')
+        selecionar(':not(#primeiro)')
+        deselecionar('*')
+        selecionar(':nth-child(1)') //seleciona todos primeiro elemento filho
+        deselecionar('*')
+        selecionar('div:nth-child(1)') //seleciona o primeiro elemento filho do tipo div
+        deselecionar('*')
+        selecionar('[wb-attrib]')
+    </script>
+</body>
+</html>

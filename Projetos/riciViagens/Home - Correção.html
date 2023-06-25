@@ -1,0 +1,115 @@
+<!-- Não esqueça de definir a linguagem do arquivo -->
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title>Rici Viagens</title>
+        <!-- Não esqueça da tag viewport para otimizar a navegação de usuários em dispotivios móveis -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- O header deve ser inserido dentro da tag <body> assim como o footer -->
+        <header>
+            <!-- Utilize a tag <nav> para indicar que a estrutura é um menu de navegação principal -->
+            <nav>
+                <a href="/home">Rici Viagens</a>
+                <!-- Uma lista não ordenada faria mais sentido nesse caso, e facilitaria a navegação de usuários com leitor de tela -->
+                <ul>
+                    <li>
+                        <a href="/destinos-populares">Destinos Populares
+                    </li>
+                    <li>
+                        <a href="/praias">Praias</a>
+                    </li>
+                    <li>
+                        <a href="/chales">Chalés</a>
+                    </li>
+                    <li>
+                        <a href="/fazendas">Fazendas</a>
+                    </li>
+                    <li>
+                        <a href="/pousadas">Pousadas</a>
+                    </li>
+                    <li>
+                        <a href="/interior">Interior</a>
+                    </li>
+                </ul>
+                <a href="/login">Iniciar sessão</a>
+            </nav>
+        </header>
+        <!-- 
+            Uma <section>, <div> ou <main> deveria ser a principal tag para envolver todos os elementos da página, 
+            evitar deixar texto e elementos "soltos" antes da tag principal.
+            <section> sempre que possível deve vir acompanhada de um título.
+            O mesmo não se aplica para <div>.
+            
+            <div> ou <section> ?
+            O elemento possui relevância semântica e seu conteúdo está agrupado de acordo com algum tema?
+            R: <section>
+
+            É um elemento genérico utilizado apenas para envolver itens e sem relavância semântica?
+            R: <div>
+
+        -->
+        <section>
+        <!-- 
+            Utilize headings h1, h2, h3, h4, etc para denontar a importância de determinado texto,
+            neste caso faz mais sentido utilizar a tag <h1>
+        -->
+        <h1>
+            Destinos Populares no Brasil
+        </h1>
+        <p>
+            Estes são os destinos mais populares no Brasil. Encontre a melhor opção para sua viagem.
+        </p>
+            <div>
+                <img src="C:\Users\Administrator\Documents\CursoWeb\HTML\riciViagens\1.png" 
+                height="230px" width="300px" alt="Rio de Janeiro - Ipanema"
+                title="Rio de Janeiro - Ipanema"></img>
+                <!-- 
+                    Cuidado ao utilizar os elements <p>, são utilizados para indicar paragráfos,
+                    geralmente é utilizado após uma tag de heading, mas isso não é regra.
+                    Neste caso seria melhor utilizar um elemento genérico como <div> ou <span>, lembrando que não é regra
+                    é apenas o padrão mais utilizado no mercado.
+                -->
+                <div>
+                    <strong>
+                        Rio de Janeiro - Ipanema
+                    </strong>
+                </div>
+                <div>
+                    12-21 Março
+                </div>
+                <div>
+                    <strong>R$ 450,00</strong> por noite
+                </div>
+            </div>
+            ...
+        </section>
+        <hr>
+        <!-- O footer deve ser inserido dentro da tag body -->
+        <footer>
+            <!-- Utilize uma <div> quando quiser envolver diversos elements, <p> não é indicado neste caso -->
+            <div>
+                <!-- 
+                    <nav> não são necessárias no footer, utilize a tag <nav> para demarcar o bloco de navegação principal.
+                    Neste caso utilize uma lista não ordenada para representar os elementos 
+                -->
+                <ul>
+                    <li>
+                        <strong>Rici Viagens</strong>
+                    </li>
+                    <li>
+                        <a href="#">Sobre nós</a><br>
+                    </li>
+                    <li>
+                        <a href="#">Trabalhe conosco</a><br>
+                    </li>
+                    <li>
+                        <a href="#">Seja um franqueado</a>
+                    </li>
+                </ul>
+                ...
+            </div>
+        </footer>
+    </body>
+</html>

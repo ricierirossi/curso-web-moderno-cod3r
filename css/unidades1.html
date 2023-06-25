@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <!--
+        No browser é possível modificar o tamanho da fonte. Se o CSS for escrito com uma fonte em valores absolutos,
+        esse tamanho não vai se alterar, mas se for em valores relativos o valor se altera conforme a configuração
+        do browser.
+    -->
+    <style>
+        .unidades-absolutas{
+            position: absolute; /*utilizado para algumas propriedades, nada a  ver com unidades absolutas*/
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px; 
+            width: 4cm; /* pouco usado */
+            height: 20mm; /* pouco usado */
+            top: 150px; /*funciona devido ao position: absolute*/
+            left: 200px; /*funciona devido ao position: absolute*/
+        }
+        .unidades-relativas{
+            position: absolute;
+            font-size: 4em;
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>
+
+<!--
+    Unidades
+        Absolutas
+            px (muito usada): não indica 1px real da tela, é normalizado
+            cm (pouco usada)
+            mm (pouco usada)
+
+        Relativas
+            Viewport
+                vh: altura da tela / 100, ou seja 1vh = 1/100 da altura que está trabalhando
+                vw: largura da tela / 100, ou seja 1vw = 1/100 da largura que está trabalhando
+                vmin: sempre a menor dimensão (isto é, em tela horizontal será a altura, em tela vertical será a largura)
+                vmax: sempre a maior dimensão (isto é, em tela horizontal será a largura, em tela vertical será a altura)
+            
+            Font
+                rem: tamanho relativo a fonte setada na raíz (body, html)
+                em: tamanho relativo a fonte setada na tag pai
+        
+            %
+                pode ser usado no viewport ou no font
+-->

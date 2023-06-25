@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .contorno {
+            height: 600px;
+            width: 350px;
+            border: solid 7px black;      
+            display: flex;  
+            flex-direction: row;  
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            /* align-content: center; */
+        }
+
+        .filho {
+            height: 150px;
+            width: 150px;
+            /* align-self: flex-end; */
+            flex-grow: 1;
+        }
+
+        .cor {
+            border: solid 3px purple;
+            width: 30px;
+        }
+
+        .p {
+            border: solid 7px blue;
+            align-self: flex-start;
+
+        }
+
+        .s {
+            border: solid 7px green;
+        }
+
+        .t {
+            border: solid 7px red;
+        }
+        .q {
+            border: solid 7px orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="contorno">
+        <div class="p filho"><div class="cor">1</div></div>
+        <div class="s filho"><div class="cor">2</div></div>
+        <div class="t filho"><div class="cor">3</div></div>
+        <div class="q filho"><div class="cor">4</div></div>
+
+    </div>
+</body>
+</html>

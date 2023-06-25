@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        const classes = document.querySelector('div').classList // Pega a lista de classes de document.querySelector('div')
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque') // toggle é uma alternância, se existe a classe destaque então ele remove, se não existe ele adiciona
+        console.log(classes.contains('destaque'))
+        console.log(classes.length)// Retorna a quantidade de classes na lista
+        classes.toggle('destaque')
+        console.log(classes.length)
+
+
+    </script>
+</body>
+
+</html>

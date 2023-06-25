@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercícios HTML</h1>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a> ||  <!--Tag <a> insere um link, href é a URL-->
+        <a href="exercicios/texto1.html">01 - Texto 1</a> || 
+        <a href="exercicios/texto2.html">02 - Texto 2</a> || 
+        <a href="exercicios/listas.html">03 - Listas</a> || 
+        <a href="exercicios/listaAninhada.html">04.1 - Lista Aninhada</a> || 
+        <a href="exercicios/listaAninhadaExpansiva.html">04.2 - Lista Aninhada Expansiva</a> || 
+        <a href="exercicios/links.html">05 - Links</a> || 
+        <a href="exercicios/tabela.html">06 - Tabela</a> || 
+        <a href="exercicios/form/form.html">07 - Formulario</a> || 
+        <a href="exercicios/images.html">08.1 - Imagens</a><br>
+        <a href="exercicios/imagesslider.html">08.2 - Imagens Slider</a> || 
+        <a href="exercicios/video.html">09 - Vídeo</a> || 
+        <a href="exercicios/tagasnaovisuais.html">10 - Tags não Visuais</a> || 
+    </nav><br>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => { //forEach está associando cada link a uma função que será disparada no onclick
+            const conteudo = document.getElementById('conteudo') //obtem-se o 'conteudo' usando getElementById
+            link.onclick = function(e) { 
+                e.preventDefault() //impede o comportamento padrão que é navegar para outra página quando clicado no link
+                fetch(link.href) //realiza uma requisição ajax em cima do href que dá o link da página
+                    .then(resp => resp.text()) //resp.text pega o conteúdo html dá página que foi feita a requisição
+                    .then(html => conteudo.innerHTML = html) //substitui o conteudo da seçao com id=conteudo
+            }
+        })
+    </script>
+</body>
+</html>

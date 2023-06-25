@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            /* order: Posiciona os flex items pelo valor, quanto mais negativo mais a direita, quanto mais positivo mais a esquerda
+                         em relação ao order padrão que é 0 */
+            order: 1;
+            order: 0;
+            order: -1;
+            align-self: center;
+            align-self: flex-end;
+            align-self: stretch; /* padrão */
+        }
+
+        .flex-container div {
+            width: 100px;
+            /* Flex-grow permite que os flex item cresçam de acordo com um peso dado e o espaço
+            sobrando no container */
+            flex-grow: 0;  /* não cresce */
+            flex-grow: 1; /* todos crescem de forma igual, pois todos receberam peso 1 */    
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2; /* o primeiro elemento div crescerá com peso 2 em relação aos outros */
+        }
+
+        .flex-container {
+            width: 300px; /* se o container for menor que a soma do tamanho dos flex item
+                            é possível usar o flex-shrink ao invés do flex-grow seguindo 
+                            a mesma lógica */
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

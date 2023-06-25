@@ -1,0 +1,28 @@
+<h1>Links</h1>
+
+<!--URL absoluta--> <!--Não pode-se remover o http: dos links, ou então, ele renderiza como uma url relativa ao invés
+de absoluta, isto é, vai tentar acessar um link dentro do próprio site-->
+<a id="inicio" href="https://www.google.com.br">Google 1</a><br>
+<a href="https://www.google.com.br" target="_blank">Google 2</a><br> <!--tag target faz o link abrir em um nova aba-->
+
+<!--URL relativa-->
+<a href="index.html">Voltar 1</a><br> <!--Vai tentar encontrar index.html dentro da pasta atual-->
+<a href="/index.html">Voltar 2</a><br> <!--Acessa a pasta raíz, no caso HTML, e encontra index.html-->
+<a href="../index.html">Voltar 3</a><br> <!--Vai voltar uma pasta e buscar index.html-->
+<!-- em Voltar 3, caso index.html estivesse em Pasta1/Pasta2/Pasta2/index.html seria necessário utilizar tres vezes
+"../"-->
+
+<!--Link de email-->
+<a href="mailto:email@empresa.com.br">Entre em Contato</a><br><br> <!--Para enviar um email utilizando um link-->
+
+<!--Dica: para criar uma tag com um id rapidamente pode se escrever "tag#nomeID" e teclar enter-->
+<!--Dica: para criar uma tag com um class rapidamente pode se escrever "tag.nomeClass" e teclar enter-->
+<!--Criar âncora na página, nada mais que um link que leva a uma parte da mesma página-->
+<div id="noticia" style="position:absolute; top:2000px;">
+        <h1>Notícia Buemba!</h1>
+        <p>Não era nada :D</p>
+        <a href="#inicio">Inicio</a>
+</div> 
+
+<a href="#noticia">Ir para Notícia</a> <!--Esse link eva até a id noticia, como a div tem um style absolute
+o link vai ficar antes dela, mesmo que tenha sido escrito depois-->

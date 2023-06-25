@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>Elemento</div>
+    <script>
+        const item = document.querySelector('div')
+        item.style.position = 'absolute'
+
+        item.onmousemove = e => {
+            const item = e.target
+            item.style.cursor = 'move'
+            if (e.buttons) { //e.buttons diferente de 0 é porquê o mouse está clicado
+                // O cursos sempre fica no centro da div
+                // A distância do item até o topo da página vai ser a posição do cursor menos a altura da div dividido por 2
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px` 
+                // A distância do item até a esquerda da página vai ser a posição do cursor menos a largura da div dividido por 2
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px`
+
+            }
+
+        }
+    </script>
+</body>

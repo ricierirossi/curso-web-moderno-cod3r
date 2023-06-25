@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        .fora{
+            position: relative;
+            background-color: orange;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+
+        .dentro{
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static; /*ocupa espaço do conteúdo (padrão)*/ /*Static positioned elements are not affected by the top, bottom, left, and right properties.*/
+            position: relative; /*conteúdo*/ /*Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.*/
+            position: absolute; /*ocupa espaço do conteúdo + padding*/ /*is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.*/
+            position: fixed; /*se baseia pelo viewport*/ /* is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+</html>

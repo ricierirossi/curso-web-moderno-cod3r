@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+    <style>
+        /* 
+            margin: espaçamento entre os elementos vizinhos
+            border: borda ao redor do elemento
+            padding: espaço entre elemento e borda (espaço ao redor do elemento)
+            content: conteúdo trabalhado
+
+            tanto para o padding quando para margin pode-se simplificar, seja a e b valores em px:
+            padding: a; --> aplicar a em todos os lados do padding
+            padding: a b; --> aplicar a top e bottom do padding, aplicar b na left e right do padding
+            padding: a b c d; --> aplicar, repectivamente, a b c e em top right bottom left
+        */
+        body{font-size: 80px; margin: 0}
+        .c1{background-color: orange;}
+        .c2{background-color: skyblue;}
+        .c3{background-color: tomato;}
+        div{
+            float: left; /*termina que um elemento deve ser retirado do seu fluxo normal e colocado ao longo do lado direito ou esquerdo do seu containêr*/
+            padding-top: 100px;
+            padding: 10px 50px 100px 150px;
+            padding: 100px 150px;
+            padding: 50px;
+            margin: 0px 20px;
+            border: solid 15px;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="c1">1</div>
+    <div class="c2">2</div>
+    <div class="c3">3</div>
+</body>
+
+</html>
+
