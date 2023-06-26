@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<body class="exercicio">
+    <!-- Trecho de HTML será renderizado pelo Vue, chamado de Template. -->
+    <div id="app">
+        <!-- É possível colocar código JS usando double mustache {{ }}, bom para coisas simples -->
+        <p>1) {{ 2 + 2 }}</p>
+        <p>2) {{ "teste".toUpperCase() }}</p>
+        <p>3) Produto: {{ nome }}, R$ {{ preco }}, {{ desconto * 100 }}%</p> <!-- Informação buscada em data no Vue Instance. Não se usa this. -->
+        <p>4) Hora certa: {{ horaCerta() }}</p> <!-- É preciso chamar como sendo uma função, com () -->
+        <p>5) Preço com desconto: R$ {{ precoComDesconto }}</p> <!-- É preciso chamar como um atributo e não como função-->
+    </div>
+    <script>
+        /* Vue Instance, é passado um objeto de configuração do framework. Responsável por manipular a DOM. */
+        new Vue({
+            el: "#app", /* element, seletor que o Vue vai cotrolar */
+            data: { /* data, objeto para colocar meus próprios dados que estarão disponíveis da aplicação */
+                nome: 'Caneta',
+                preco: 6.89,
+                desconto: 0.15,
+            },
+            methods: { /* methods, objeto para colocar métodos que poderão ser invocados dentro do Template */
+                horaCerta() {
+                    return new Date().toLocaleString()
+                }
+            },
+            computed: { /* computed, valores calculados */
+                precoComDesconto() {
+                    return this.preco * (1 - this.desconto) // É usado this.
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

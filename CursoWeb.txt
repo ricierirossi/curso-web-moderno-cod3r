@@ -16,8 +16,8 @@ Sumário: 	12 (opcional)	-	Concluído
 			22				-	Concluído
 			23				-	Concluído
 			24				-	Concluído
-			25				-	Em Andamento
-			26				-	A fazer
+			25				-	A fazer
+			26				-	Em Andamento
 			27				-	A fazer
 			28				-	A fazer
 			29				- 	A fazer
