@@ -11,8 +11,43 @@
 
 <body>
 
+    <div id="app">
+
+        <h1>{{ title }}</h1>
+        <div>
+            <input type="text" size="25" placeholder="Digite para gerar..." :value="text" @input="onData">
+        </div>
+
+        <!-- O código pode ser simplificado trocando o ":value" por "v-model" e removendo os methods -->
+
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="QRCode">
+        </div>
+
+    </div>
+
     <script>
-        // ...
+        
+        new Vue ({
+            el: '#app',
+            data: {
+                title: 'Gerador QRCode',
+                text: 'https://www.cod3r.com.br',
+                qrcode: new QRious({ size: 300 }),
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            },
+            methods: {
+                onData(event) {
+                    this.text = event.target.value
+                }
+            }
+        })
+
     </script>
 </body>
 
