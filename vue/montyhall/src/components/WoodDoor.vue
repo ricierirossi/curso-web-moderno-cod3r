@@ -1,6 +1,6 @@
 <template>
     <div class="door-area">
-        <div class="door-frame" :class="{ selected: selected }"> <!-- :class="{classe css que será aplicada: valor que define se aplica ou não a classe}"-->
+        <div class="door-frame" :class="{ selected: selected && !open}"> <!-- :class="{classe css que será aplicada: valor que define se aplica ou não a classe}"-->
             <GiftBox v-if="open && hasGift"/>
         </div>
         <div class="door" 
