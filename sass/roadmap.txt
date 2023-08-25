@@ -11,7 +11,7 @@ https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb
 #8 Maps - ok
 #9 Loops - ok
 #10 Conditionals - ok
-#11 Parente Selectos - 
+#11 Parent Selectors -  ok
 #12 Mixins - 
 #13 Functions - 
 #14 Making Utility Classes - 
