@@ -13,7 +13,7 @@ https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb
 #10 Conditionals - ok
 #11 Parent Selectors -  ok
 #12 Mixins - ok
-#13 Functions - 
+#13 Functions - ok
 #14 Making Utility Classes - 
 #15 Media Queries - 
 #16 Making a Grid System pt 1 - 
