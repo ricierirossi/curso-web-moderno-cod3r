@@ -17,7 +17,7 @@ https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb
 #14 Making Utility Classes - ok
 #15 Media Queries - ok
 #16 Making a Grid System pt 1 - ok
-#17 Making a Grid System pt 2 - 
+#17 Making a Grid System pt 2 - ok
 #18 Using Extend - 
 #19 Using the CSS Library- 
 #20 Purging CSS - 
