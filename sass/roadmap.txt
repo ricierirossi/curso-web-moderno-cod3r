@@ -21,8 +21,8 @@ https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb
 #18 Using Extend - ok
 #19 Using the CSS Library - ok
 #20 Purging CSS - ok
-#21 Customizing the Library- 
-#22 Extending the Library Yourself - 
+#21 Customizing the Library - ok 
+#22 Extending the Library Yourself - ok 
 
 
 
