@@ -1,0 +1,232 @@
+SASS é um pre-processador e extensão para CSS. Sua maior vantagem é
+reduzir repetição de CSS e poupar tempo. 
+
+Variáveis:
+    Assim com no CSS é possível criar variáveis que armazenam valores
+    para serem utilizadas em diversas propriedades de estilo.
+
+    $meu-vermelho = rgb(255, 0 ,0)
+
+    .classe {
+        background-color: $meu-vermelho;
+    }
+
+Parciais e imports:
+    Parciais é a separação de códigos SASS em arquivos distintos.
+    Esta prática permite que o código seja mais organizado e fácil
+    manutenção. Os arquivos podem ser importados através do @importados.
+    Os arquivos parciais podem ser renomeados com o _ no nome, fazendo
+    com quê não sejam compilados em um arquivo CSS a parte.
+
+    _button.scss
+
+    @import "component/button";
+
+Estrutura de projeto:
+    Esta etapa consiste em separar os arquivos sass de tal forma que 
+    o projeto fique bem organizado.
+
+    css
+        index.css
+    minha-biblioteca-sass
+        component
+            _button.scss
+            _card.scss
+            _nav.scss
+        _base.scss
+        _variables.scss
+        _index.scss
+    index.html
+
+Estruturas aninhadas:
+    SASS permite que a estilização seja escrita com a mesma hierarquia
+    do HTML. Ou seja, aninhar os seletores.
+
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            }
+
+        li { display: inline-block; }
+
+        a {
+            display: block;
+            padding: 6px 12px;
+            text-decoration: none;
+        }
+    }
+
+Math:
+    math é um built-in module SASS capaz de operar em números. É preciso 
+    incorporar o método no código.
+
+        @use "sass:math";
+
+        border-radius: math.div($variable, 4)
+        @debug math.floor(2.6);
+
+Loop:
+    Loops são um controle de fluxo que permite controlar se os estilos
+    são aplicados ou não, ou emiti-los multiplas vezes com pequenas variações.
+    Podem ser usados junto de mixins e funções.
+        
+
+        @each $size in $sizes {
+            .icon-#{$size} {
+                font-size: $size;
+        }
+
+        @for $i from 1 through 3 {
+            ul:nth-child(3n + #{$i}) {
+                background-color: lighten($base-color, $i * 5%);
+            }
+        }
+
+        @while $value > $base {
+            $value: math.div($value, $ratio);
+        }
+
+Condicionais:
+    São utilizadas para verificar a veracidade de determinadas condições e
+    realizar alguma ação com base nesta informação.
+    
+        @if $light-theme {
+            background-color: $light-background;
+            color: $light-text;
+        } @else {
+            background-color: $dark-background;
+            color: $dark-text;
+        }
+
+Seletores pais:
+    Seletor pai & é utilizado de forma aninhada para se referir ao seletor
+    mais externo. Com ele é possível utilizar seletores de forma mais complexa
+    adicionando pseudo-classes ou seletores antes do pai.
+
+        .class {
+            color: red;
+
+            &:hover {
+                color: blue;
+            }
+        }
+
+Mixins:
+    São "objetos" que quando chamados em uma classe passam as propriedades
+    de estilo definadas nele para essa classe. Podem ser passados parâmetros
+    para o mixin.
+
+        @mixin reset-list ($cor) { 
+            margin: 0;
+            border: solid 1px $cor
+        }
+
+        .ul {
+            @include reset-list
+        }
+
+Funções:
+    Funções permitem definir operações complexas para serem reutilizadas
+    nos estilos. Facilitando a abstração de formulas e comportamoentos em comum
+    em uma forma de fácil leitura.
+
+        @function pow($base, $exponent) {
+            $result: 1;
+            @for $_ from 1 through $exponent {
+                $result: $result * $base;
+            }
+            @return $result;
+        }
+
+        .sidebar {
+        float: left;
+        margin-left: pow(4, 3) * 1px;
+        }
+
+Classes de Utilidade:
+    São classes geradas através de loops e condicionais.
+    Maps com valores pre-definidos para propriedades são 
+    percorridos para que seja possível gerar as classes.
+
+        $utilities: (
+            background-color: (
+                "prefixe": "bgc",
+                "values": (
+                    "red": #ff0000,
+                    "blue": #0000ff,
+                    "green": #00ff00
+                )
+            ),
+            color: (
+                "prefixe": "c",
+                "values": (
+                    "red": #ff0000,
+                    "blue": #0000ff,
+                    "green": #00ff00
+                )
+            )
+        )
+        @each $css-property, $property-map in $utilities {
+            $prefix: map-get($property-map, "prefixe");
+            $values: map-get($property-map, "values");
+
+            @each $color-key, $color-value in $values {
+                .#{$prefixe}-#{$color-key} {
+                    #{$css-property}: $color-value
+                }
+            }
+        }
+
+Media Queries:
+    Utilizadas para aplicar responsividade em aplicações. Pode-se criar
+    um map com os breakpoints e utilizá-los em mixins para definir as 
+    propriedades de estilo para cada brakpoint.
+
+        $breakpoiints: (
+            "xs": 0,
+            "sm": 480px,
+            "md": 720px,
+            "lg": 960px,
+            "xl": 1200px,
+        );
+
+        @mixin xs {
+            @media (min-width: map-get($breakpoiints, "xs")) {
+                @content;
+            }
+            }
+            @mixin sm {
+            @media (min-width: map-get($breakpoiints, "sm")) {
+                @content;
+            }
+        }
+
+Extend: 
+    Permite extender/herdar propriedades CSS de outras regras. 
+    Para a classe flex-layout não ser compilada no index.css 
+    basta trocar "." por "%"
+
+        .flex-layout {
+            width: 100%;
+            display: flex;
+        }
+
+        .navbar {
+            @extend .flex-layout;
+            background-color: red;
+        }
+
+Customizando a biblioteca CSS:
+    O ideal é não sobrescever a biblioteca original, mas sim sobrescrever
+    as propriedades em um outro arquivo .scss. Neste caso, as propriedades
+    originais devem estar seguidas de "!default".
+
+        No arquivo original:
+            $primary: green !default;
+
+        No novo arquivo:
+            $primary: blue;
+            @import "_arquivo-original";
+          
