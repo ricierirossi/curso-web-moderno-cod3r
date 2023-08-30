@@ -18,7 +18,7 @@ https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb
 #15 Media Queries - ok
 #16 Making a Grid System pt 1 - ok
 #17 Making a Grid System pt 2 - ok
-#18 Using Extend - 
+#18 Using Extend - ok
 #19 Using the CSS Library- 
 #20 Purging CSS - 
 #21 Customizing the Library- 
