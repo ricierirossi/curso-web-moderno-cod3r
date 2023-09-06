@@ -9,8 +9,13 @@
       Facere, commodi corrupti ipsam neque totam reprehenderit laboriosam
       laborum veniam est quo, repellat saepe impedit labore?
     </p>
+    <div>{{ data }}</div>
   </div>
 </template>
+
+<script setup>
+const { data } = await useFetch("/api/currency/GBP");
+</script>
 
 <style scoped>
 h2 {

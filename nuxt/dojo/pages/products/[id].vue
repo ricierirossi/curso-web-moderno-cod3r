@@ -1,16 +1,28 @@
 <template>
   <div>
-    <p>Product details for {{ id }}</p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia vitae
-      recusandae nihil eaque sunt distinctio esse hic fugit vel dolore?
-    </p>
+    <Head>
+      <Title>Nuxt Dojo | {{ product.title }}</Title>
+      <Meta name="description" :content="product.description" />
+    </Head>
+    <ProductDetails :product="product" />
   </div>
 </template>
 
 <script setup>
-// o valor dentro de { } deve ser o mesmo do arquivo.s
+// o valor dentro de { } deve ser o mesmo do arquivo.
 const { id } = useRoute().params;
+const uri = "https://fakestoreapi.com/products/" + id;
+
+//fetch the product
+const { data: product } = await useFetch(uri);
+
+if (!product.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Product not found",
+    fatal: true,
+  });
+}
 
 definePageMeta({
   layout: "products",
