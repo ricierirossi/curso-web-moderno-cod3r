@@ -23,7 +23,7 @@ axios
     });
 
 // Outra maneira de resolver
-
+/*
 const url2 = "http://files.cod3r.com.br/curso-js/funcionarios.json";
 const axios = require("axios");
 
@@ -41,3 +41,4 @@ axios.get(url2).then((response) => {
         .reduce(menorSalario);
     console.log(funcChinesaSalario);
 });
+*/
